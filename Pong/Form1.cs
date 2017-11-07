@@ -11,43 +11,54 @@ using System.Windows.Forms;
 namespace Pong
 {
     public partial class Form1 : Form
-    {
-        const int movementSpeed = 3;
-        bool isUpPressed, isDownPressed;
+    {    
+        Player player1, player2;
+        Ball ball;
+
         public Form1()
         {
             InitializeComponent();
+            player1 = new Player(paddleLeft);
+            player2 = new Player(paddleRight);
+            ball = new Ball(aBall);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(isUpPressed)
-            {
-                paddleLeft.Location = new Point(paddleLeft.Location.X, paddleLeft.Location.Y - movementSpeed);
-            } 
-            if (isDownPressed)
-            {
-                paddleLeft.Location = new Point(paddleLeft.Location.X, paddleLeft.Location.Y + movementSpeed);
-            }
+            player1.ProcessMove();
+            player2.ProcessMove();
+            ball.ProcessMove();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Up)
-            {
-                isUpPressed = true;
-            } else if (e.KeyCode == Keys.Down)
-              {
-                isDownPressed = true;
-              }
+            CheckKeys(e, true);
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up)
+            CheckKeys(e, false);
+        }
+
+        private void CheckKeys(KeyEventArgs e, bool isDown)
+        {
+            switch (e.KeyCode)
             {
-                isUpPressed = false;
+                case Keys.W:
+                    player1.isUpPressed = isDown;
+                    break;
+                case Keys.S:
+                    player1.isDownPressed = isDown;
+                    break; 
+
+                case Keys.Up:
+                    player2.isUpPressed = isDown;
+                    break;
+                case Keys.Down:
+                    player2.isDownPressed = isDown;
+                    break;
             }
         }
+
     }
 }

@@ -32,17 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.paddleLeft = new System.Windows.Forms.PictureBox();
             this.paddleRight = new System.Windows.Forms.PictureBox();
-            this.ball = new System.Windows.Forms.PictureBox();
+            this.aBall = new System.Windows.Forms.PictureBox();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.paddleLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paddleRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aBall)).BeginInit();
             this.SuspendLayout();
             // 
             // paddleLeft
             // 
             this.paddleLeft.Image = ((System.Drawing.Image)(resources.GetObject("paddleLeft.Image")));
-            this.paddleLeft.Location = new System.Drawing.Point(12, 204);
+            this.paddleLeft.Location = new System.Drawing.Point(12, 273);
             this.paddleLeft.Name = "paddleLeft";
             this.paddleLeft.Size = new System.Drawing.Size(22, 202);
             this.paddleLeft.TabIndex = 0;
@@ -51,20 +51,20 @@
             // paddleRight
             // 
             this.paddleRight.Image = ((System.Drawing.Image)(resources.GetObject("paddleRight.Image")));
-            this.paddleRight.Location = new System.Drawing.Point(1110, 204);
+            this.paddleRight.Location = new System.Drawing.Point(1110, 273);
             this.paddleRight.Name = "paddleRight";
             this.paddleRight.Size = new System.Drawing.Size(22, 202);
             this.paddleRight.TabIndex = 1;
             this.paddleRight.TabStop = false;
             // 
-            // ball
+            // aBall
             // 
-            this.ball.Image = ((System.Drawing.Image)(resources.GetObject("ball.Image")));
-            this.ball.Location = new System.Drawing.Point(497, 284);
-            this.ball.Name = "ball";
-            this.ball.Size = new System.Drawing.Size(22, 22);
-            this.ball.TabIndex = 2;
-            this.ball.TabStop = false;
+            this.aBall.Image = ((System.Drawing.Image)(resources.GetObject("aBall.Image")));
+            this.aBall.Location = new System.Drawing.Point(553, 364);
+            this.aBall.Name = "aBall";
+            this.aBall.Size = new System.Drawing.Size(22, 22);
+            this.aBall.TabIndex = 2;
+            this.aBall.TabStop = false;
             // 
             // Timer
             // 
@@ -78,7 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1144, 726);
-            this.Controls.Add(this.ball);
+            this.Controls.Add(this.aBall);
             this.Controls.Add(this.paddleRight);
             this.Controls.Add(this.paddleLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -91,7 +91,7 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.paddleLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paddleRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aBall)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -100,7 +100,7 @@
 
         private System.Windows.Forms.PictureBox paddleLeft;
         private System.Windows.Forms.PictureBox paddleRight;
-        private System.Windows.Forms.PictureBox ball;
+        private System.Windows.Forms.PictureBox aBall;
         private System.Windows.Forms.Timer Timer;
     }
 }

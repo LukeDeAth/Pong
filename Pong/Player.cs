@@ -10,13 +10,28 @@ namespace Pong
 
         public bool isUpPressed, isDownPressed;
 
-        PictureBox paddle;
+        public PictureBox paddle;
+        Label scoreLabel;
         bool? wasGoingUpLastTick;
         int numberOfTicksGoingInTheSameDirection;
+        int _score;
+        public int score
+        {
+            get
+            {
+                return _score;
+            }
+            set
+            {
+                _score = value;
+                scoreLabel.Text = score.ToString();
+            }
+        }
 
-        public Player(PictureBox paddleLeft)
+        public Player(PictureBox paddleLeft, Label scoreLabel)
         {
             this.paddle = paddleLeft;
+            this.scoreLabel = scoreLabel;
         }
 
         internal void ProcessMove()
@@ -73,8 +88,8 @@ namespace Pong
                     speed *= -1;
                 }
                 paddle.Location = new Point(paddle.Location.X,
-                    Math.Max(GameBorders.topborder,
-                        Math.Min(GameBorders.bottomborder - paddle.Height, paddle.Location.Y + speed))
+                    Math.Max(GameBorders.topBorder,
+                        Math.Min(GameBorders.bottomBorder - paddle.Height, paddle.Location.Y + speed))
                     );
             }
         }

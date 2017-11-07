@@ -8,6 +8,7 @@ namespace Pong
 {
     public static class GameBorders
     {
-        public const int topborder = 0, bottomborder = 730;//764
+        //Form size 1160, 764
+        public const int topBorder = 0, bottomBorder = 730, leftBorder = 0, rightBorder = 1160;
     }
 }
